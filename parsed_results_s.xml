@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AnalyzerReport tool_version="5.8.1" platform_name="ubuntu-16.04-64" assess_fw_version="2.6.5" package_name="java-design-patterns" build_root_dir="/home/builder/build" assess_fw="java-assess" package_root_dir="pkg1" assessment_start_ts="1504204607.1730874" parser_fw_version="3.1.2" parser_fw="resultparser" tool_name="pmd" package_version="199840b9ea" uuid="fd3a24a7-b3a4-41ab-aef2-a5d1977da9cd">
+  <BugInstance id="0">
+    <ClassName>com.growingwiththeweb.designpatterns.delegation.DelegationInterface</ClassName>
+    <Methods>
+      <Method id="1" primary="true">f</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/delegation/DelegationInterface.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>12</StartColumn>
+        <EndColumn>14</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Naming</BugGroup>
+    <BugCode>ShortMethodName</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Avoid using short method names</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[0]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="1">
+    <ClassName>com.growingwiththeweb.designpatterns.factorymethod.ConcreteProduct2</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/factorymethod/ConcreteProduct2.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>5</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[1]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="2">
+    <ClassName>com.growingwiththeweb.designpatterns.facade.Facade</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/facade/Facade.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>20</StartColumn>
+        <EndColumn>25</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>JavaBeans</BugGroup>
+    <BugCode>BeanMembersShouldSerialize</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Found non-transient, non-static member. Please mark as transient or provide accessors.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[2]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="3">
+    <ClassName>com.growingwiththeweb.designpatterns.facade.Facade</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/facade/Facade.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>20</StartColumn>
+        <EndColumn>25</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>ImmutableField</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Private field 'class1' could be made final; it is only initialized in the declaration or constructor.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[2]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="4">
+    <ClassName>com.growingwiththeweb.designpatterns.facade.Facade</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/facade/Facade.java</SourceFile>
+        <StartLine>5</StartLine>
+        <EndLine>5</EndLine>
+        <StartColumn>20</StartColumn>
+        <EndColumn>25</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>JavaBeans</BugGroup>
+    <BugCode>BeanMembersShouldSerialize</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Found non-transient, non-static member. Please mark as transient or provide accessors.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[2]/violation[2]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="5">
+    <ClassName>com.growingwiththeweb.designpatterns.facade.Facade</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/facade/Facade.java</SourceFile>
+        <StartLine>5</StartLine>
+        <EndLine>5</EndLine>
+        <StartColumn>20</StartColumn>
+        <EndColumn>25</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>ImmutableField</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Private field 'class2' could be made final; it is only initialized in the declaration or constructor.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[2]/violation[3]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="6">
+    <ClassName>com.growingwiththeweb.designpatterns.visitor.ConcreteElementB</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/visitor/ConcreteElementB.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>13</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[3]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="7">
+    <ClassName>com.growingwiththeweb.designpatterns.factorymethod.Product2Factory</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/factorymethod/Product2Factory.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[4]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="8">
+    <ClassName>com.growingwiththeweb.designpatterns.visitor.ConcreteElementA</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/visitor/ConcreteElementA.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>13</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[5]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="9">
+    <ClassName>com.growingwiththeweb.designpatterns.singleton.LazyLoadingSingleton</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/singleton/LazyLoadingSingleton.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>16</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>ClassWithOnlyPrivateConstructorsShouldBeFinal</BugCode>
+    <BugSeverity>1</BugSeverity>
+    <BugMessage>A class which only has private constructors should be final</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[6]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="10">
+    <ClassName>com.growingwiththeweb.designpatterns.singleton.LazyLoadingSingleton</ClassName>
+    <Methods>
+      <Method id="1" primary="true">getInstance</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/singleton/LazyLoadingSingleton.java</SourceFile>
+        <StartLine>11</StartLine>
+        <EndLine>12</EndLine>
+        <StartColumn>9</StartColumn>
+        <EndColumn>50</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Braces</BugGroup>
+    <BugCode>IfStmtsMustUseBraces</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Avoid using if statements without curly braces</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[6]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="11">
+    <ClassName>com.growingwiththeweb.designpatterns.singleton.LazyLoadingSingleton</ClassName>
+    <Methods>
+      <Method id="1" primary="true">getInstance</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/singleton/LazyLoadingSingleton.java</SourceFile>
+        <StartLine>11</StartLine>
+        <EndLine>12</EndLine>
+        <StartColumn>9</StartColumn>
+        <EndColumn>50</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>NonThreadSafeSingleton</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Singleton is not thread safe</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[6]/violation[2]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="12">
+    <ClassName>com.growingwiththeweb.designpatterns.facade.Class1</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/facade/Class1.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[7]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="13">
+    <ClassName>com.growingwiththeweb.designpatterns.decorator.Decorator</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/decorator/Decorator.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>13</EndLine>
+        <StartColumn>17</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Naming</BugGroup>
+    <BugCode>AbstractNaming</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Abstract classes should be named AbstractXXX</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[8]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="14">
+    <ClassName>com.growingwiththeweb.designpatterns.decorator.Decorator</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/decorator/Decorator.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>32</StartColumn>
+        <EndColumn>40</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>JavaBeans</BugGroup>
+    <BugCode>BeanMembersShouldSerialize</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Found non-transient, non-static member. Please mark as transient or provide accessors.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[8]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="15">
+    <ClassName>com.growingwiththeweb.designpatterns.decorator.Decorator</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/decorator/Decorator.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>32</StartColumn>
+        <EndColumn>40</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>ImmutableField</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Private field 'component' could be made final; it is only initialized in the declaration or constructor.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[8]/violation[2]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="16">
+    <ClassName>com.growingwiththeweb.designpatterns.flyweight.FlyweightFactory</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/flyweight/FlyweightFactory.java</SourceFile>
+        <StartLine>6</StartLine>
+        <EndLine>19</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[9]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="17">
+    <ClassName>com.growingwiththeweb.designpatterns.flyweight.FlyweightFactory</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/flyweight/FlyweightFactory.java</SourceFile>
+        <StartLine>7</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>45</StartColumn>
+        <EndColumn>54</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>JavaBeans</BugGroup>
+    <BugCode>BeanMembersShouldSerialize</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Found non-transient, non-static member. Please mark as transient or provide accessors.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[9]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="18">
+    <ClassName>com.growingwiththeweb.designpatterns.flyweight.FlyweightFactory</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/flyweight/FlyweightFactory.java</SourceFile>
+        <StartLine>7</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>13</StartColumn>
+        <EndColumn>43</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>UseConcurrentHashMap</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>If you run in Java5 or newer and have concurrent access, you should use the ConcurrentHashMap implementation</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[9]/violation[2]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="19">
+    <ClassName>com.growingwiththeweb.designpatterns.flyweight.FlyweightFactory</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/flyweight/FlyweightFactory.java</SourceFile>
+        <StartLine>7</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>45</StartColumn>
+        <EndColumn>54</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>ImmutableField</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Private field 'flyweights' could be made final; it is only initialized in the declaration or constructor.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[9]/violation[3]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="20">
+    <ClassName>com.growingwiththeweb.designpatterns.factorymethod.ConcreteProduct1</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/factorymethod/ConcreteProduct1.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>5</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[10]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="21">
+    <ClassName>com.growingwiththeweb.designpatterns.singleton.Singleton</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/singleton/Singleton.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>13</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>ClassWithOnlyPrivateConstructorsShouldBeFinal</BugCode>
+    <BugSeverity>1</BugSeverity>
+    <BugMessage>A class which only has private constructors should be final</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[11]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="22">
+    <ClassName>com.growingwiththeweb.designpatterns.facade.Class2</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/facade/Class2.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[12]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="23">
+    <ClassName>com.growingwiththeweb.designpatterns.visitor.VisitorInterface</ClassName>
+    <Methods>
+      <Method id="1" primary="true">visit</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/visitor/VisitorInterface.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>12</StartColumn>
+        <EndColumn>48</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Unnecessary</BugGroup>
+    <BugCode>UnnecessaryModifier</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Avoid modifiers which are implied by the context</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[13]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="24">
+    <ClassName>com.growingwiththeweb.designpatterns.visitor.VisitorInterface</ClassName>
+    <Methods>
+      <Method id="1" primary="true">visit</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/visitor/VisitorInterface.java</SourceFile>
+        <StartLine>5</StartLine>
+        <EndLine>5</EndLine>
+        <StartColumn>12</StartColumn>
+        <EndColumn>48</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Unnecessary</BugGroup>
+    <BugCode>UnnecessaryModifier</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Avoid modifiers which are implied by the context</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[13]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="25">
+    <ClassName>com.growingwiththeweb.designpatterns.visitor.ConcreteVisitor1</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/visitor/ConcreteVisitor1.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>3</EndLine>
+        <StartColumn>1</StartColumn>
+        <EndColumn>32</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Import Statements</BugGroup>
+    <BugCode>UnusedImports</BugCode>
+    <BugSeverity>4</BugSeverity>
+    <BugMessage>Avoid unused imports such as 'java.util.logging.Logger'</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[14]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="26">
+    <ClassName>com.growingwiththeweb.designpatterns.visitor.ConcreteVisitor1</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/visitor/ConcreteVisitor1.java</SourceFile>
+        <StartLine>5</StartLine>
+        <EndLine>15</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[14]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="27">
+    <ClassName>com.growingwiththeweb.designpatterns.factorymethod.Program</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/factorymethod/Program.java</SourceFile>
+        <StartLine>6</StartLine>
+        <EndLine>18</EndLine>
+        <StartColumn>22</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>UseUtilityClass</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[15]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="28">
+    <ClassName>com.growingwiththeweb.designpatterns.factorymethod.Program</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/factorymethod/Program.java</SourceFile>
+        <StartLine>7</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>27</StartColumn>
+        <EndColumn>74</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Java Logging</BugGroup>
+    <BugCode>LoggerIsNotStaticFinal</BugCode>
+    <BugSeverity>2</BugSeverity>
+    <BugMessage>The Logger variable declaration does not contain the static and final modifiers</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[15]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="29">
+    <ClassName>com.growingwiththeweb.designpatterns.flyweight.Flyweight</ClassName>
+    <Methods>
+      <Method id="1" primary="true">operation</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/flyweight/Flyweight.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>12</StartColumn>
+        <EndColumn>43</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Unnecessary</BugGroup>
+    <BugCode>UnnecessaryModifier</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Avoid modifiers which are implied by the context</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[16]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="30">
+    <ClassName>com.growingwiththeweb.designpatterns.flyweight.ConcreteFlyweight</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/flyweight/ConcreteFlyweight.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>21</StartColumn>
+        <EndColumn>34</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>JavaBeans</BugGroup>
+    <BugCode>BeanMembersShouldSerialize</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Found non-transient, non-static member. Please mark as transient or provide accessors.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[17]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="31">
+    <ClassName>com.growingwiththeweb.designpatterns.flyweight.ConcreteFlyweight</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/flyweight/ConcreteFlyweight.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>21</StartColumn>
+        <EndColumn>34</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>ImmutableField</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Private field 'intrinsicState' could be made final; it is only initialized in the declaration or constructor.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[17]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="32">
+    <ClassName>com.growingwiththeweb.designpatterns.delegation.DelegateB</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/delegation/DelegateB.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[18]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="33">
+    <ClassName>com.growingwiththeweb.designpatterns.delegation.DelegateB</ClassName>
+    <Methods>
+      <Method id="1" primary="true">f</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/delegation/DelegateB.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>19</StartColumn>
+        <EndColumn>21</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Naming</BugGroup>
+    <BugCode>ShortMethodName</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Avoid using short method names</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[18]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="34">
+    <ClassName>com.growingwiththeweb.designpatterns.factorymethod.Product1Factory</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/factorymethod/Product1Factory.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[19]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="35">
+    <ClassName>com.growingwiththeweb.designpatterns.decorator.ComponentInterface</ClassName>
+    <Methods>
+      <Method id="1" primary="true">operation</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/decorator/ComponentInterface.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>12</StartColumn>
+        <EndColumn>30</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Unnecessary</BugGroup>
+    <BugCode>UnnecessaryModifier</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Avoid modifiers which are implied by the context</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[20]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="36">
+    <ClassName>com.growingwiththeweb.designpatterns.delegation.DelegateA</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/delegation/DelegateA.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[21]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="37">
+    <ClassName>com.growingwiththeweb.designpatterns.delegation.DelegateA</ClassName>
+    <Methods>
+      <Method id="1" primary="true">f</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/delegation/DelegateA.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>19</StartColumn>
+        <EndColumn>21</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Naming</BugGroup>
+    <BugCode>ShortMethodName</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Avoid using short method names</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[21]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="38">
+    <ClassName>com.growingwiththeweb.designpatterns.visitor.ConcreteVisitor2</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/visitor/ConcreteVisitor2.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>3</EndLine>
+        <StartColumn>1</StartColumn>
+        <EndColumn>32</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Import Statements</BugGroup>
+    <BugCode>UnusedImports</BugCode>
+    <BugSeverity>4</BugSeverity>
+    <BugMessage>Avoid unused imports such as 'java.util.logging.Logger'</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[22]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="39">
+    <ClassName>com.growingwiththeweb.designpatterns.visitor.ConcreteVisitor2</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/visitor/ConcreteVisitor2.java</SourceFile>
+        <StartLine>5</StartLine>
+        <EndLine>15</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[22]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="40">
+    <ClassName>com.growingwiththeweb.designpatterns.factorymethod.Product</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/factorymethod/Product.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>5</EndLine>
+        <StartColumn>17</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Naming</BugGroup>
+    <BugCode>AbstractNaming</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Abstract classes should be named AbstractXXX</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[23]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="41">
+    <ClassName>com.growingwiththeweb.designpatterns.factorymethod.Product</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/factorymethod/Product.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>5</EndLine>
+        <StartColumn>17</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[23]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="42">
+    <ClassName>com.growingwiththeweb.designpatterns.factorymethod.Product</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/factorymethod/Product.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>5</EndLine>
+        <StartColumn>17</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>AbstractClassWithoutAnyMethod</BugCode>
+    <BugSeverity>1</BugSeverity>
+    <BugMessage>No abstract method which means that the keyword is most likely used to prevent instantiation. Use a private or protected constructor instead.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[23]/violation[2]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="43">
+    <ClassName>com.growingwiththeweb.designpatterns.factorymethod.Product</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/factorymethod/Product.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>5</EndLine>
+        <StartColumn>17</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Design</BugGroup>
+    <BugCode>AbstractClassWithoutAbstractMethod</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>This abstract class does not have any abstract methods</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[23]/violation[3]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="44">
+    <ClassName>com.growingwiththeweb.designpatterns.delegation.Delegator</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/delegation/Delegator.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>15</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[24]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="45">
+    <ClassName>com.growingwiththeweb.designpatterns.delegation.Delegator</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/delegation/Delegator.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>33</StartColumn>
+        <EndColumn>40</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>JavaBeans</BugGroup>
+    <BugCode>BeanMembersShouldSerialize</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Found non-transient, non-static member. Please mark as transient or provide accessors.</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[24]/violation[1]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="46">
+    <ClassName>com.growingwiththeweb.designpatterns.delegation.Delegator</ClassName>
+    <Methods>
+      <Method id="1" primary="true">f</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/delegation/Delegator.java</SourceFile>
+        <StartLine>6</StartLine>
+        <EndLine>6</EndLine>
+        <StartColumn>19</StartColumn>
+        <EndColumn>21</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Naming</BugGroup>
+    <BugCode>ShortMethodName</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Avoid using short method names</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[24]/violation[2]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="47">
+    <ClassName>com.growingwiththeweb.designpatterns.delegation.Delegator</ClassName>
+    <Methods>
+      <Method id="1" primary="true">f</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/delegation/Delegator.java</SourceFile>
+        <StartLine>8</StartLine>
+        <EndLine>8</EndLine>
+        <StartColumn>13</StartColumn>
+        <EndColumn>24</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>OnlyOneReturn</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>A method should have only one exit point, and that should be the last statement in the method</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[24]/violation[3]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="48">
+    <ClassName>com.growingwiththeweb.designpatterns.decorator.ConcreteComponent</ClassName>
+    <Methods></Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/decorator/ConcreteComponent.java</SourceFile>
+        <StartLine>3</StartLine>
+        <EndLine>7</EndLine>
+        <StartColumn>8</StartColumn>
+        <EndColumn>1</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Controversial</BugGroup>
+    <BugCode>AtLeastOneConstructor</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Each class should declare at least one constructor</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[25]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugInstance id="49">
+    <ClassName>com.growingwiththeweb.designpatterns.visitor.ElementInterface</ClassName>
+    <Methods>
+      <Method id="1" primary="true">accept</Method>
+    </Methods>
+    <BugLocations>
+      <Location id="1" primary="true">
+        <SourceFile>pkg1/java-design-patterns-199840b9ea/src/com/growingwiththeweb/designpatterns/visitor/ElementInterface.java</SourceFile>
+        <StartLine>4</StartLine>
+        <EndLine>4</EndLine>
+        <StartColumn>12</StartColumn>
+        <EndColumn>49</EndColumn>
+      </Location>
+    </BugLocations>
+    <BugGroup>Unnecessary</BugGroup>
+    <BugCode>UnnecessaryModifier</BugCode>
+    <BugSeverity>3</BugSeverity>
+    <BugMessage>Avoid modifiers which are implied by the context</BugMessage>
+    <BugTrace>
+      <BuildId>1</BuildId>
+      <AssessmentReportFile>assessment_report1.xml</AssessmentReportFile>
+      <InstanceLocation>
+        <Xpath>/pmd/file[26]/violation[0]</Xpath>
+      </InstanceLocation>
+    </BugTrace>
+  </BugInstance>
+  <BugSummary>
+    <BugCategory group="Braces" code="IfStmtsMustUseBraces" count="1" bytes="1017" />
+    <BugCategory group="Controversial" code="AtLeastOneConstructor" count="16" bytes="15225" />
+    <BugCategory group="Controversial" code="OnlyOneReturn" count="1" bytes="1034" />
+    <BugCategory group="Controversial" code="UseConcurrentHashMap" count="1" bytes="1015" />
+    <BugCategory group="Design" code="AbstractClassWithoutAbstractMethod" count="1" bytes="958" />
+    <BugCategory group="Design" code="AbstractClassWithoutAnyMethod" count="1" bytes="1040" />
+    <BugCategory group="Design" code="ClassWithOnlyPrivateConstructorsShouldBeFinal" count="2" bytes="1960" />
+    <BugCategory group="Design" code="ImmutableField" count="5" bytes="4925" />
+    <BugCategory group="Design" code="NonThreadSafeSingleton" count="1" bytes="1001" />
+    <BugCategory group="Design" code="UseUtilityClass" count="1" bytes="1053" />
+    <BugCategory group="Import Statements" code="UnusedImports" count="2" bytes="1910" />
+    <BugCategory group="Java Logging" code="LoggerIsNotStaticFinal" count="1" bytes="978" />
+    <BugCategory group="JavaBeans" code="BeanMembersShouldSerialize" count="6" bytes="5894" />
+    <BugCategory group="Naming" code="AbstractNaming" count="2" bytes="1852" />
+    <BugCategory group="Naming" code="ShortMethodName" count="4" bytes="3882" />
+    <BugCategory group="Unnecessary" code="UnnecessaryModifier" count="5" bytes="5032" />
+  </BugSummary>
+</AnalyzerReport>
