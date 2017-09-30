@@ -1,0 +1,2 @@
+To add a new attribute type for the assessment result, increment the value of the attriSize, and add a mapping name-value to dict list, in the vmu_Scarf_CParsing.c .
+For example, for new attribute named "NewAttribute", insert an entry: {"NewAttribute" : 0}. 

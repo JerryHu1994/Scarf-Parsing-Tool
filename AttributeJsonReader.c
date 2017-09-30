@@ -12,11 +12,10 @@
 #include <assert.h>
 #include "Scarf.h"
 #include "AttributeJsonReader.h"
-#define MAXATTRIBUTESIZE 30
-
 
 extern entry dict[];
 
+// The state contains a list of state variables for the JSON parser
 typedef struct State {
 	int inGenericList; // indicates the praser is in the Generic Tool list
 	int inScarfAttributes; // indicates the parser is in the ScarfAtrributes
@@ -28,6 +27,7 @@ typedef struct State {
 	entry *entryList;	
 } State;
 
+// The reader for the attribute JSON file
 struct AttributeJSONReader {
 	FILE *file;
 	yajl_handle reader;
@@ -39,19 +39,19 @@ struct AttributeJSONReader {
 static int handle_null(void * ctx)
 {
 	(void)ctx;
-	printf("Handling a NULL\n");
+	//printf("Handling a NULL\n");
 	return 1;
 }
 
 static int handle_boolean(void *data, int boolean)
 {
-	printf("Handling a boolean\n");
+	//printf("Handling a boolean\n");
 	return 1;
 }
 
 static int handle_number(void * data, const char * s, size_t l)
 {
-	printf("Handling a number\n");
+	//printf("Handling a number\n");
 	return 1;
 }
 
@@ -218,15 +218,20 @@ void DeleteAttributeJSONReader (AttributeJSONReader * reader)
 	fclose(reader->file);
 	free(reader);
 }
+
+// Set the UTF8 of the attribute reader
 void AttributeJSONReaderSetUTF8(AttributeJSONReader * reader, int value)
 {
 	reader->utf8 = value;
 }
 
+// Return the UTF8 of the attribute reader
 int AttributeJSONReaderGetUTF8(AttributeJSONReader * reader)
 {
 	return reader->utf8;
 }
+
+// Set the toolname of the attribute reader
 void AttributeJSONReaderSetToolname(AttributeJSONReader * reader, char * toolName)
 {
 	if (toolName == NULL) {
@@ -239,6 +244,7 @@ void AttributeJSONReaderSetToolname(AttributeJSONReader * reader, char * toolNam
 	}
 	reader->state->toolName = toolName; 
 }
+// Retrun the toolName of the attribute reader
 char * AttributeJSONReaderGetToolname(AttributeJSONReader * reader)
 {
 	if (reader == NULL) {
@@ -248,7 +254,7 @@ char * AttributeJSONReaderGetToolname(AttributeJSONReader * reader)
 	return reader->state->toolName;
 }
 
-
+// Set the dict list into the attribute reader
 void AttributeJSONReaderSetDict(AttributeJSONReader * reader, entry * dict){
 	if(dict == NULL) {
 		fprintf(stderr, "The entry list cannot be NULL\n");	
@@ -257,6 +263,8 @@ void AttributeJSONReaderSetDict(AttributeJSONReader * reader, entry * dict){
 	reader->state->entryList = dict;
 	return;
 }
+
+// Start parsing the Scarf_ToolList.json with the attribute reader
 void * AttributeJSONReaderParse(AttributeJSONReader * hand)
 {
 	hand->reader = yajl_alloc(&callbacks, NULL, hand->state);
@@ -281,11 +289,7 @@ void * AttributeJSONReaderParse(AttributeJSONReader * hand)
 		stat = yajl_parse(hand->reader, fileData, rd);
 		if (stat != yajl_status_ok)	break;
 	}
-
 	
 	// return the final value
 	return 0;
 }
-
-
-

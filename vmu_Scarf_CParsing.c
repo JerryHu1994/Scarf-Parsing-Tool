@@ -52,6 +52,7 @@ void setAttributeValid(entry * input, char *attribute)
 }
 
 // Return the valid bit of the attribute
+// Otherwise, return -1 if the attribute is not found.
 int getAttributeValid(entry * input, char *attribute)
 {
 	int i;
