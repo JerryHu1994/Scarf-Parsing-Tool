@@ -1,0 +1,10 @@
+{
+   	"Generic-Toollist" : ["Tool1", "Tool2"],
+	"ScarfAttributes": {
+        "Generic":["BugId", "resolutionSuggestion", "bugMessage", "bugSeversity", "instanceLocation", "bugGroup"],
+        "pmd": ["BugId", "resolutionSuggestion", "bugMessage","bugGroup","instanceLocation"],
+		"Tool3": ["BugId", "cweIds", "cweIdsCount", "cweIdsSize"],
+		"Tool4": ["BugId", "cweIds", "cweIdsCount", "cweIdsSize", "bugRank", "resolutionSuggestion"],
+    	"default":["BugId", "cweIds", "cweIdsCount", "cweIdsSize", "methodsCount","methodsSize", "locationsCount", "locationsSize","className", "bugSeverity", "bugRank", "resolutionSuggestion", "bugMessage", "bugCode", "bugGroup", "assessmentReportFile", "buildId", "instanceLocation", "methods", "locations"]
+	}
+ } 

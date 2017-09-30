@@ -505,7 +505,7 @@ int processBug(xmlTextReaderPtr reader, BugInstance *bug)
 	    loc->locationId = strtol(temp, NULL, 10);
 	    xmlFree((xmlChar *) temp);
 	    temp = (char *) xmlTextReaderGetAttribute(reader, (xmlChar *) "primary");
-	    printf("%s\n", temp);
+	    //printf("%s\n", temp);
 	    if (strcmp(temp, "true") == 0) {
 		loc->primary = 1;
     	    } else {
