@@ -7,7 +7,7 @@ all: vmu_Scarf_CParsing
 %.o : %.c
 	$(CC) -c -o $@ $< $(LDFLAGS)
 
-vmu_Scarf_CParsing : vmu_Scarf_CParsing.c ScarfXmlReader.o ScarfJsonWriter.o AttributeJsonReader.o Scarf.h AttributeJsonReader.h
+vmu_Scarf_CParsing : vmu_Scarf_CParsing.c ScarfXmlReader.o ScarfJsonWriter.o AttributeJsonReader.o ScarfCommon.h ScarfXml.h ScarfJson.h AttributeJsonReader.h
 	$(CC) $(LDFLAGS) $(CXXFLAGS) -g -o $@ vmu_Scarf_CParsing.c ScarfXmlReader.o ScarfJsonWriter.o AttributeJsonReader.o 
 
 clean:

@@ -68,6 +68,7 @@ static int handle_string(void * data, const unsigned char *string, size_t string
 	// If the parser is in the Generic-Toolist, check if the toolName matches one of the generic tool
 	if (currState->inGenericList) {
 		if (!strcmp(currString, currState->toolName) && !(currState->genericTool)){
+			printf("Found the generic tool!\n");
 			currState->genericTool = 1;
 			return 1;	
 		}
@@ -108,6 +109,11 @@ static int handle_map_key(void * data, const unsigned char * string, size_t stri
 	}
 	// hitting the Generic in the ScarfAttributes
 	if (currState->inScarfAttributes && !strcmp(currString, "Generic")) {
+		currState->inGenericAttributes = 1;
+	}
+	// if a toolname is not found both in Generic-Toollist and NonGenericAttributes, set it to Generic-Tool
+	if (currState->inScarfAttributes && !strcmp(currString, "Generic") && !(currState->inNonGenericAttributes)) {
+		currState->genericTool = 1;
 		currState->inGenericAttributes = 1;
 	}
 	// hitting the nongeneric matched tool
