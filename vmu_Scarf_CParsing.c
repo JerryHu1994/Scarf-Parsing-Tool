@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Scarf.h"
+#include "ScarfCommon.h"
 #include "AttributeJsonReader.h"
+#include "ScarfXml.h"
+#include "ScarfJson.h"
 
 // define the size of the maximum attributes
 #define attriSize 20

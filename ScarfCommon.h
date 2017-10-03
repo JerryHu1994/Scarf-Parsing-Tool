@@ -159,6 +159,17 @@ char * CheckStart(Initial * initial);
 char * CheckBug(BugInstance * bug);
 char * CheckMetric(Metric * metric);
 
+/*************** AttributeJsonReader *************/
+typedef struct AttributeJSONReader AttributeJSONReader;
+AttributeJSONReader * NewAttributeJSONReaderFromFile(FILE *file);
+AttributeJSONReader * NewAttributeJSONReaderFromFilename(char * filename);
+AttributeJSONReader * NewAttributeJSONReaderFromFd(int fd);
+void DeleteAttributeJSONReader (AttributeJSONReader * reader);
+void AttributeJSONReaderSetUTF8(AttributeJSONReader * reader, int value);
+void AttributeJSONReaderSetToolname(AttributeJSONReader * reader, char * toolName);
+char * AttributeJSONReaderGetToolname(AttributeJSONReader * reader);
+void * AttributeJSONReaderParse(AttributeJSONReader * hand);
+int AttributeJSONReaderGetUTF8(AttributeJSONReader * reader);
 
 #ifdef __cplusplus
 }

@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-#include "Scarf.h"
+#include "ScarfCommon.h"
 #include "AttributeJsonReader.h"
 
 extern entry dict[];
