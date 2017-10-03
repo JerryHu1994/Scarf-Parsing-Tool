@@ -1,16 +1,16 @@
 {
-   	"Generic-Toollist" : ["error-prone", "checkstyle", "Pylint", "bandit", "brakeman", "csslint", "dependency-check", "error-prone", "eslint", "flake8", "flow", "html5-tidy", "jshint", "php_codesniffer", "ps-ctest", "ps-jtest", "reek"],
+   	"Generic-Toollist" : ["error-prone", "checkstyle", "Pylint"],
 	"ScarfAttributes": {
-    	"androidlint" : ["bugGroup", "bugCode", "locations", "bugMessage", "resolutionSuggestion"],
-		"dawnscanner" : ["bugCode", "bugSeverity", "bugMessage", "resolutionSuggestion"],
-		"archie" : ["bugSeverity", "bugGroup", "bugCode", "locations", "bugMessage"],
-		"clang-sa" : ["bugGroup", "bugCode", "locations", "bugMessage"],
-		"findbugs" : ["bugSeverity", "bugGroup", "bugCode", "locations", "bugMessage", "resolutionSuggestion"],
-		"pmd" : ["bugSeverity", "bugGroup", "bugCode", "locations", "bugMessage"],
-		"gt-csonar" : ["bugGroup", "bugCode", "locations", "bugMessage"],
-		"gcc-warn" : ["bugGroup", "bugCode", "locations", "bugMessage"],
+    	"android" : ["bugGroup", "bugCode", "locations", "bugMessage", "resolutionSuggestion"],
+		"Dawn" : ["bugCode", "bugSeverity", "bugMessage", "resolutionSuggestion"],
+		"Archie" : ["bugSeverity", "bugGroup", "bugCode", "locations", "bugMessage"],
+		"clang" : ["bugGroup", "bugCode", "locations", "bugMessage"],
+		"Findbugs" : ["bugSeverity", "bugGroup", "bugCode", "locations", "bugMessage", "resolutionSuggestion"],
+		"PMD" : ["bugSeverity", "bugGroup", "bugCode", "locations", "bugMessage"],
+		"CodeSonar" : ["bugGroup", "bugCode", "locations", "bugMessage"],
+		"gcc" : ["bugGroup", "bugCode", "locations", "bugMessage"],
 		"cppcheck" : ["bugGroup", "bugCode", "locations", "bugMessage"],
-		"reveal" : ["bugGroup", "bugCode", "locations", "bugMessage"],	
+		"RevealDroid" : ["bugGroup", "bugCode", "locations", "bugMessage"],	
         "Generic" : ["bugGroup", "bugCode", "locations", "bugMessage"],
 		"default":["BugId", "cweIds", "cweIdsCount", "cweIdsSize", "methodsCount","methodsSize", "locationsCount", "locationsSize","className", "bugSeverity", "bugRank", "resolutionSuggestion", "bugMessage", "bugCode", "bugGroup", "assessmentReportFile", "buildId", "instanceLocation", "methods", "locations"]
 	}
