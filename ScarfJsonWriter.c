@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "ScarfJson.h"
-
 ////////////////////structs///////////////////////////
 
 typedef struct ScarfJSONWriter {
@@ -49,11 +48,10 @@ ScarfJSONWriter * NewScarfJSONWriterFromFilename(char * filename)
     writerInfo->writer = yajl_gen_alloc(NULL);
     yajl_gen_config(writerInfo->writer, yajl_gen_beautify, 1);
     yajl_gen_config(writerInfo->writer, yajl_gen_validate_utf8 , 1);
-//    writerInfo->filename = malloc(strlen(filename) + 1);
     writerInfo->file = fopen(filename, "w");
-    if (writerInfo->file == NULL){
+	if (writerInfo->file == NULL){
         printf("File could not open\n");
-        free(writerInfo);
+		free(writerInfo);
         return NULL;
     }
     writerInfo->bugId = 1;
@@ -92,7 +90,7 @@ void DeleteScarfJSONWriter (ScarfJSONWriter * writerInfo)
     free(writerInfo->metricSum);
     if (writerInfo->filetype == 1 || writerInfo->filetype == 2) {
 	fclose(writerInfo->file);
-    }
+	}
 //    free(writerInfo->filename);
     free(writerInfo);
 }

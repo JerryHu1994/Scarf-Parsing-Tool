@@ -138,17 +138,19 @@ void printDict(){
 int main(int argc, char **argv) {
     
 	//check the input arguments
-	if (argc != 7 || strcmp(argv[1], "-input_dir") || strcmp(argv[3], "-output_dir") || strcmp(argv[5], "-tool_name")) {
-		fprintf(stderr, "The input arguments should be: ./vmu_Scarf_CParsing.c -input_dir ... -output_dir ... -tool_name ...\n");
+	if (argc != 9 || strcmp(argv[1], "-input_dir") || strcmp(argv[3], "-output_dir") || strcmp(argv[5], "-tool_name") || strcmp(argv[7], "-tool_list")) {
+		fprintf(stderr, "The input arguments should be: ./vmu_Scarf_CParsing.c -input_dir ... -output_dir ... -tool_name ... -tool_list ...\n");
 		exit(1);
 	}
 	char *inputFile;
 	char *outputFile;
 	char *toolName;
+	char *toolListPath;
 	inputFile = strdup(argv[2]);
 	outputFile = strdup(argv[4]);
 	toolName = strdup(argv[6]);
-	
+	toolListPath = strdup(argv[8]);
+
 	// Create the ScarfXmlReader from the scarf file
 	ScarfXmlReader *reader = NewScarfXmlReaderFromFilename(inputFile, "UTF-8");
     if(reader == NULL){
@@ -157,6 +159,9 @@ int main(int argc, char **argv) {
     }
 	
 	// Create the ScarfJsoWriter for output Json
+	printf("%s\n", outputFile);
+	printf("%s\n", inputFile);
+	printf("%s\n", toolName);
 	writer = NewScarfJSONWriterFromFilename(outputFile);
 	if (writer == NULL) {
         fprintf(stderr, "Creating JSON writer failed\n");
@@ -166,7 +171,7 @@ int main(int argc, char **argv) {
     ScarfJSONWriterSetPretty(writer, 1);
 
 	// Create the AttributeJSONReader from the Scarf_ToolList.json
-	AttributeJSONReader *attriReader = NewAttributeJSONReaderFromFilename("Scarf_ToolList.json");
+	AttributeJSONReader *attriReader = NewAttributeJSONReaderFromFilename(toolListPath);
 
 	if (attriReader == NULL) {
 		fprintf(stderr, "Creating attribute JSON reader failed\n");
@@ -203,12 +208,12 @@ int main(int argc, char **argv) {
 
 	// Start parsing the scarf
     Parse(reader);
-    
+   
 	// End parsing and free the memory
 	ScarfJSONWriterAddSummary(writer);
 	ScarfJSONWriterAddEndTag(writer);
 	DeleteScarfXmlReader(reader);
 	DeleteAttributeJSONReader(attriReader);	
-    
+   	DeleteScarfJSONWriter(writer); 
 	return 0;
 }

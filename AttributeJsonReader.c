@@ -108,11 +108,11 @@ static int handle_map_key(void * data, const unsigned char * string, size_t stri
 		currState->inScarfAttributes = 1;
 	}
 	// hitting the Generic in the ScarfAttributes
-	if (currState->inScarfAttributes && !strcmp(currString, "Generic")) {
+	if (currState->inScarfAttributes && !strcmp(currString, "generic")) {
 		currState->inGenericAttributes = 1;
 	}
 	// if a toolname is not found both in Generic-Toollist and NonGenericAttributes, set it to Generic-Tool
-	if (currState->inScarfAttributes && !strcmp(currString, "Generic") && !(currState->inNonGenericAttributes)) {
+	if (currState->inScarfAttributes && !strcmp(currString, "generic") && !(currState->inNonGenericAttributes)) {
 		currState->genericTool = 1;
 		currState->inGenericAttributes = 1;
 	}
