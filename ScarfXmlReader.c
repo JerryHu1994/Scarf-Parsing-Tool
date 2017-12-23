@@ -34,10 +34,10 @@ typedef struct Callback {
 } Callback;
 
 
-typedef struct ScarfXmlReader{
+struct ScarfXmlReader{
     xmlTextReaderPtr reader;
     Callback *callback;
-} ScarfXmlReader;
+};
 
 ///////////////Initiailize a Metric//////////////////////////////////////////////
 Metric *initializeMetric()
@@ -331,7 +331,9 @@ char *trim(char *str)
 	str++;
     }
     if ( *str == 0 ) {
-	return str;
+    	char *newStr = malloc(1);
+	*newStr = '\0';
+	return newStr;
     }
     end = str + strlen(str) - 1;
     while ( end > str && isspace(*end) ) {
@@ -394,7 +396,7 @@ int processBug(xmlTextReaderPtr reader, BugInstance *bug)
 {
     char *name = (char *) xmlTextReaderName(reader);
     int type = xmlTextReaderNodeType(reader);
-
+	
     //start tags
     if (type == 1) {
 
@@ -447,7 +449,7 @@ int processBug(xmlTextReaderPtr reader, BugInstance *bug)
 	    bug->cweIds[bug->cweIdsCount] = strtol(temp, NULL, 10);
 	    bug->cweIdsCount++;
 	    xmlFree((xmlChar *) temp);
-
+		incrementXMLCount("cweIds");
 
     	} else if (strcmp(name, "Method") == 0){
 	    if ( bug->methods == NULL ) {
@@ -481,6 +483,7 @@ int processBug(xmlTextReaderPtr reader, BugInstance *bug)
 	    method->name = trim(temp);
 	    xmlFree((xmlChar *) temp);
 	    bug->methodsCount++;
+		incrementXMLCount("methods");
 
 	} else if (strcmp(name, "Location") == 0) {
 	    if ( bug->locations == NULL ) {
@@ -513,7 +516,7 @@ int processBug(xmlTextReaderPtr reader, BugInstance *bug)
 	    }
 	    xmlFree((xmlChar *) temp);
 	    bug->locationsCount++;
-
+		incrementXMLCount("locations");	
 	} else if (strcmp(name,"StartLine") == 0) {
 	    char *temp = (char *) xmlTextReaderReadInnerXml(reader);
 	    Location * cur = &bug->locations[bug->locationsCount-1];
@@ -549,38 +552,47 @@ int processBug(xmlTextReaderPtr reader, BugInstance *bug)
 	    char *temp = (char *) xmlTextReaderReadInnerXml(reader);
 	    bug->assessmentReportFile = trim(temp);
 	    xmlFree((xmlChar *) temp);
+		incrementXMLCount("assessmentReportFile");
 	} else if (strcmp(name, "BuildId") == 0) {
 	    char *temp = (char *) xmlTextReaderReadInnerXml(reader);
 	    bug->buildId = trim(temp);
 	    xmlFree((xmlChar *) temp);
+		incrementXMLCount("buildId");
 	} else if (strcmp(name, "BugCode") == 0) {
 	    char *temp = (char *) xmlTextReaderReadInnerXml(reader);
 	    bug->bugCode = trim(temp);
 	    xmlFree((xmlChar *) temp);
+		incrementXMLCount("bugCode");
 	} else if (strcmp(name, "BugRank") == 0) {
 	    char *temp = (char *) xmlTextReaderReadInnerXml(reader);
 	    bug->bugRank = trim(temp);
 	    xmlFree((xmlChar *) temp);
+		incrementXMLCount("bugRank");
 	} else if (strcmp(name, "ClassName") == 0) {
 	    char *temp = (char *) xmlTextReaderReadInnerXml(reader);
 	    bug->className = trim(temp);
 	    xmlFree((xmlChar *) temp);
+		incrementXMLCount("className");
 	} else if (strcmp(name, "BugSeverity") == 0) {
 	    char *temp = (char *) xmlTextReaderReadInnerXml(reader);
 	    bug->bugSeverity = trim(temp);
 	    xmlFree((xmlChar *) temp);
+		incrementXMLCount("bugSeverity");
 	} else if (strcmp(name, "BugGroup") == 0) {
 	    char *temp = (char *) xmlTextReaderReadInnerXml(reader);
 	    bug->bugGroup = trim(temp);
 	    xmlFree((xmlChar *) temp);
+		incrementXMLCount("bugGroup");
 	} else if (strcmp(name, "BugMessage") == 0) {
 	    char *temp = (char *) xmlTextReaderReadInnerXml(reader);
 	    bug->bugMessage = trim(temp);
 	    xmlFree((xmlChar *) temp);
+		incrementXMLCount("bugMessage");
 	} else if (strcmp(name, "ResolutionSuggestion") == 0) {
 	    char *temp = (char *) xmlTextReaderReadInnerXml(reader);
 	    bug->resolutionSuggestion = trim(temp);
 	    xmlFree((xmlChar *) temp);
+		incrementXMLCount("resolutionSuggestion");
 	}
 
     //end tags
@@ -592,7 +604,7 @@ int processBug(xmlTextReaderPtr reader, BugInstance *bug)
     }
 
     xmlFree((xmlChar *) name);
-    return 0;
+	return 0;
 }
 
 
@@ -751,7 +763,7 @@ void * Parse(ScarfXmlReader *hand)
 		    SetXmlAttr(reader, initial, package_version);
 		    SetXmlAttr(reader, initial, parser_fw);
 		    SetXmlAttr(reader, initial, parser_fw_version);
-		    SetXmlAttr(reader, initial, platform_name);
+		    SetXmlAttr(reader, initial, platform_version);
 		    SetXmlAttr(reader, initial, tool_name);
 		    SetXmlAttr(reader, initial, tool_version);
 		    SetXmlAttr(reader, initial, uuid);
@@ -771,6 +783,7 @@ void * Parse(ScarfXmlReader *hand)
 		    if (foundBug == 1) {
 			kill = callback->bugCall(bug, callback->CallbackData);
 		    }
+			incrementBugCount();
 		    _clearBug(bug);
 
 	        } else if ( strcmp ( name, "Metric" ) == 0 && callback->metricCall != NULL ) {
@@ -893,7 +906,7 @@ void * Parse(ScarfXmlReader *hand)
 	}
 	if (ret != 0) {
 	    printf("Failed to parse set file\n");
-	    return NULL;
+	    return (void*) -1;
 	} else if ( kill != NULL && !finished ) {
 	    if ( callback->finishCallback != NULL ) {
 		kill = callback->finishCallback(kill, callback->CallbackData);
@@ -902,7 +915,7 @@ void * Parse(ScarfXmlReader *hand)
 
     } else {
 	printf("ScarfXmlReader set to invalid file\n");
-	return NULL;
+	return (void*) -1;
     }
     return kill;
 }

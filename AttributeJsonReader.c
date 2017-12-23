@@ -13,7 +13,7 @@
 #include "ScarfCommon.h"
 #include "AttributeJsonReader.h"
 
-extern entry dict[];
+extern int debug;
 
 // The state contains a list of state variables for the JSON parser
 typedef struct State {
@@ -22,9 +22,11 @@ typedef struct State {
 	int inGenericAttributes; // indicates the parser is in the Generic Attributes
 	int inNonGenericAttributes; // indicates the parser in the nonGeneric Attributes matched with tool
 	int genericTool; //indicates if the assessment tool is generic for fetching attributes
+	int nonGenericTool;//indicates if a nonGeneric tool match has been found
 	char *toolName;
 	int intoGenericTool;
-	entry *entryList;	
+	int defaultMode;
+	int inDefault;
 } State;
 
 // The reader for the attribute JSON file
@@ -39,36 +41,43 @@ struct AttributeJSONReader {
 static int handle_null(void * ctx)
 {
 	(void)ctx;
-	//printf("Handling a NULL\n");
 	return 1;
 }
 
 static int handle_boolean(void *data, int boolean)
 {
-	//printf("Handling a boolean\n");
 	return 1;
 }
 
 static int handle_number(void * data, const char * s, size_t l)
 {
-	//printf("Handling a number\n");
 	return 1;
 }
 
 static int handle_string(void * data, const unsigned char *string, size_t stringLen)
 {
-	//printf("Handling a string\n");
-	//printf("%s   %d \n", currString, stringLen);
 	State *currState = (State *)data;
 	char *fullString = (char *)string;
-	char *currString = malloc(stringLen + 1);
-	assert(currString != NULL);	
-	strncpy(currString, fullString, stringLen);
+	char *currAttribute = malloc(stringLen + 1);
+	assert(currAttribute != NULL);	
+	strncpy(currAttribute, fullString, stringLen);
+
+	//check if the default mode is on, and then check if the default line is hit
+	if (currState->defaultMode) {
+		if (currState->inDefault) {
+			//insert a new entry into the sorted list
+			//printf("Default : %s\n", currAttribute);	
+			addAttribute(currAttribute);	
+		}
+		return 1;
+	}
 
 	// If the parser is in the Generic-Toolist, check if the toolName matches one of the generic tool
 	if (currState->inGenericList) {
-		if (!strcmp(currString, currState->toolName) && !(currState->genericTool)){
-			printf("Found the generic tool!\n");
+		if (!strcmp(currAttribute, currState->toolName) && !(currState->genericTool)){
+			if	(debug > 1) {
+				printf("[DEBUG]: Found the generic tool!\n");
+			}
 			currState->genericTool = 1;
 			return 1;	
 		}
@@ -76,51 +85,64 @@ static int handle_string(void * data, const unsigned char *string, size_t string
 	// IF the parser is in the Generic Attributes and the tool is generic, set all the attributes in the 
 	// generic list to valid
 	if (currState->genericTool && currState->inGenericAttributes) {
-		setAttributeValid(currState->entryList, currString);	
+		setAttributeValid(currAttribute);	
 		return 1;
 	}
 
 	//If the parser has found its nonGeneric tool
 	if (currState->inNonGenericAttributes){
-		setAttributeValid(currState->entryList, currString);	
+		setAttributeValid(currAttribute);	
 		return 1;
 	}	
 	return 1;
 }
 
-static int handle_map_key(void * data, const unsigned char * string, size_t stringLen)
+static int handle_map_key(void * data, const unsigned char * string, size_t keyLen)
 {
-	//printf("Handling a map key\n");
-	//printf("%s   %d \n", currString, stringLen);
+	if (debug > 1) {
+		printf("[DEBUG]: handle_map_key - string: <%s>\n", string);
+	}
 	State *currState = (State *)data;
 	char *fullString = (char *)string;
-	char *currString = malloc(stringLen + 1);
-	assert(currString != NULL);	
-	strncpy(currString, fullString, stringLen);
+	char *currKey = malloc(keyLen + 1);
+	assert(currKey != NULL);	
+	strncpy(currKey, fullString, keyLen);
 
-
+	//check if the default mode is on, and then check if the default key is hit
+	if (currState->defaultMode) {
+		if (!strcmp(currKey, "default")) {
+			currState->inDefault = 1;
+		}
+		return 1;
+	}
+	if (debug > 1) {
+		printf("[DEBUD]: key: <%s>\n", currKey);
+	}
 	// hitting the Generic-ToolList label and save the current state	
-	if (!strcmp(currString, "Generic-Toollist")) {
+	if (!strcmp(currKey, "Generic-Toollist")) {
 		currState->inGenericList = 1;
 	}
 	// hitting the ScarfAttributes
-	if (!strcmp(currString, "ScarfAttributes")) {
+	if (!strcmp(currKey, "ScarfAttributes")) {
 		currState->inScarfAttributes = 1;
 	}
 	// hitting the Generic in the ScarfAttributes
-	if (currState->inScarfAttributes && !strcmp(currString, "generic")) {
+	if (currState->inScarfAttributes && !strcmp(currKey, "generic")) {
 		currState->inGenericAttributes = 1;
 	}
 	// if a toolname is not found both in Generic-Toollist and NonGenericAttributes, set it to Generic-Tool
-	if (currState->inScarfAttributes && !strcmp(currString, "generic") && !(currState->inNonGenericAttributes)) {
+	if (currState->inScarfAttributes && !strcmp(currKey, "generic") && !(currState->inNonGenericAttributes) && (currState->nonGenericTool != 1)) {
 		currState->genericTool = 1;
 		currState->inGenericAttributes = 1;
 	}
 	// hitting the nongeneric matched tool
-	if (currState->inScarfAttributes && !currState->genericTool && !strcmp(currString, currState->toolName)){
-		currState->inNonGenericAttributes = 1;		
+	if (currState->inScarfAttributes && !currState->genericTool && !strcmp(currKey, currState->toolName)){
+		currState->inNonGenericAttributes = 1;
+		currState->nonGenericTool = 1;		
+		if (debug > 1) {
+			printf("[DEBUG]: %s - nongeneric\n", currKey);
+		}
 	}
-	
 	return 1;
 }
 static int handle_start_map(void * data)
@@ -177,13 +199,28 @@ AttributeJSONReader * NewAttributeJSONReaderFromFile(FILE *file)
 {
 	AttributeJSONReader * reader = calloc(1, sizeof(struct AttributeJSONReader));
 	if (reader == NULL) {
-		fprintf(stderr, "JSON reader could not be created\n");	
+		fprintf(stderr, "[ERROR]: JSON reader could not be created\n");	
 	}
 	reader->file = file;
 	reader->state = calloc(1, sizeof(State));	
-	//reader->state->entryList = dict; 
 	reader->utf8 = 1;
 	return reader;
+}
+
+void setAttributeDefault(AttributeJSONReader * reader)
+{
+	if (reader == NULL) {
+		fprintf(stderr, "[ERROR]: JSON reader could not be null\n");
+	}
+	reader->state->defaultMode = 1;
+}
+
+void setAttributeNonDefault(AttributeJSONReader * reader)
+{
+	if (reader == NULL) {
+		fprintf(stderr, "[ERROR]: JSON reader could not be null\n");
+	}
+	reader->state->defaultMode = 0;
 }
 
 // Initialize the JSON reader from the file name
@@ -191,16 +228,16 @@ AttributeJSONReader * NewAttributeJSONReaderFromFilename(char * filename)
 {
 	AttributeJSONReader * reader = calloc(1, sizeof(struct AttributeJSONReader));
 	if (reader == NULL) {
-		fprintf(stderr, "JSON reader could not be created\n");	
+		fprintf(stderr, "[ERROR]: JSON reader could not be created\n");	
 	}
 	reader->file = fopen(filename, "r");
 	if (reader->file == NULL) {
-		fprintf(stderr, "File could not be opened\n");
+		fprintf(stderr, "[ERROR]: File could not be opened\n");
 		return NULL;
 	}
 	reader->state = calloc(1, sizeof(State));	
-	//reader->state->entryList = dict;
 	reader->utf8 = 1;
+	setAttributeNonDefault(reader);
 	return reader;	
 }
 
@@ -209,11 +246,12 @@ AttributeJSONReader * NewAttributeJSONReaderFromFd(int fd)
 {
 	AttributeJSONReader * reader = calloc(1, sizeof(struct AttributeJSONReader));
 	if (reader == NULL) {
-		fprintf(stderr, "JSON reader could not be created\n");	
+		fprintf(stderr, "[ERROR]: JSON reader could not be created\n");	
 	}
 	reader->file = fdopen(fd, "w");
 	reader->state = calloc(1, sizeof(State));	
 	reader->utf8 = 1;
+	setAttributeNonDefault(reader);
 	return reader;	
 }
 
@@ -241,11 +279,11 @@ int AttributeJSONReaderGetUTF8(AttributeJSONReader * reader)
 void AttributeJSONReaderSetToolname(AttributeJSONReader * reader, char * toolName)
 {
 	if (toolName == NULL) {
-		fprintf(stderr, "The toolname cannot be NULL\n");
+		fprintf(stderr, "[ERROR]: The toolname cannot be NULL\n");
 		return;
 	}
 	if (reader == NULL) {
-		fprintf(stderr, "The AttributeJSONReader cannot be NULL\n");
+		fprintf(stderr, "[ERROR]: The AttributeJSONReader cannot be NULL\n");
 		return;
 	}
 	reader->state->toolName = toolName; 
@@ -254,20 +292,10 @@ void AttributeJSONReaderSetToolname(AttributeJSONReader * reader, char * toolNam
 char * AttributeJSONReaderGetToolname(AttributeJSONReader * reader)
 {
 	if (reader == NULL) {
-		fprintf(stderr, "The AttributeJSONReader cannot be NULL\n");
+		fprintf(stderr, "[ERROR]: The AttributeJSONReader cannot be NULL\n");
 		return;
 	}
 	return reader->state->toolName;
-}
-
-// Set the dict list into the attribute reader
-void AttributeJSONReaderSetDict(AttributeJSONReader * reader, entry * dict){
-	if(dict == NULL) {
-		fprintf(stderr, "The entry list cannot be NULL\n");	
-		return;
-	}
-	reader->state->entryList = dict;
-	return;
 }
 
 // Start parsing the Scarf_ToolList.json with the attribute reader
@@ -284,10 +312,8 @@ void * AttributeJSONReaderParse(AttributeJSONReader * hand)
 		rd = fread((void *)fileData, 1, sizeof(fileData)-1, fh);
 		if(rd == 0){
 			if(!feof(fh)){
-				fprintf(stderr, "Error on the file reading\n");
+				fprintf(stderr, "[ERROR]: Error on the file reading\n");
 				retVal =1;
-			}else {
-				printf("Reaching the end of file\n");
 			}
 			break;
 		}

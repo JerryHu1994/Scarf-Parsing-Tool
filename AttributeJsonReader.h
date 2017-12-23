@@ -26,8 +26,12 @@ void AttributeJSONReaderSetToolname(AttributeJSONReader * reader, char * toolNam
 
 char * AttributeJSONReaderGetToolname(AttributeJSONReader * reader);
 
-void AttributeJSONReaderSetDict(AttributeJSONReader * reader, entry * dict);
-void setAttributeValid(entry * input, char *attribute);
-int getAttributeValid(entry * input, char *attribute);
+void setAttributeValid(char *attribute);
+
+int getAttributeValid(char *attribute);
+
+void setAttributeDefault(AttributeJSONReader * reader);
+
+void setAttributeNonDefault(AttributeJSONReader * reader);
 #endif
 

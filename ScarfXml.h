@@ -36,8 +36,9 @@ void *GetCallbackData(ScarfXmlReader *reader);
 void * Parse(ScarfXmlReader *hand);
 int DeleteScarfXmlReader(ScarfXmlReader *reader);
 
+void incrementXMLCount(char *attribute);
 
-
+void incrementBugCount();
 /*************** ScarfXmlWriter *************/
 typedef struct ScarfXmlWriter ScarfXmlWriter;
 

@@ -12,6 +12,7 @@ typedef struct entry
 {
 	char *name;
 	int valid;
+	int xmlCount;
 }entry;
 #endif
 /////////////////Summary structs ///////////////////////////
@@ -54,7 +55,9 @@ typedef struct Initial
     char *assess_fw;
     char *assess_fw_version;
     char *assessment_start_ts;
-    char *build_fw;
+	char *assessment_end_ts;    
+	char *report_generation_ts;
+	char *build_fw;
     char *build_fw_version;
     char *build_root_dir;
     char *package_name;
@@ -63,7 +66,8 @@ typedef struct Initial
     char *parser_fw;
     char *parser_fw_version;
     char *platform_name;
-    char *tool_name;
+    char *platform_version;
+	char *tool_name;
     char *tool_version;
     char *uuid;
 } Initial;
